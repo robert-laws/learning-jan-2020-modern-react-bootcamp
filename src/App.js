@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
+  const name = 'Hal';
+
+  function sayHello(name) {
+    return `Hello ${name}`;
+  }
+
+  function getNumber() {
+    return Math.floor(Math.random() * 10) + 1;
+  }
+
+  const getNum = getNumber();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Learn React, {sayHello(name)}</p>
+      <h2>Your number is... {getNum}</h2>
+      <h3>
+        {getNum === 7 ? 'Lucky' : 'Unlucky...'}
+      </h3>
     </div>
   );
 }
