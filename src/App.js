@@ -13,7 +13,7 @@ function App() {
       <Hello />
       <Greeting name='Jim' number={5} arrivedOnTime />
       <hr />
-      <Slots s1="x" s2="x" s3="x" />
+      <Slots s1="x" s2="x" s3="y" />
       <hr />
       <Loops name='Bob' hobbies={['golf', 'chess', 'swimming', 'painting', 'video games']} />
       <Loops hobbies={['walking', 'tv']} />
