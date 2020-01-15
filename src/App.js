@@ -1,6 +1,5 @@
 import React from 'react';
-import Pokecard from './Pokecard';
-
+import Pokedex from './Pokedex';
 
 // styles
 import './sass/App.scss';
@@ -8,7 +7,7 @@ import './sass/App.scss';
 function App() {
   return (
     <div className="App">
-      <Pokecard id={4} name="Charmander" type="first" exp={62} />
+      <Pokedex />
     </div>
   );
 }
