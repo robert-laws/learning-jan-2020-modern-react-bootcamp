@@ -2,7 +2,6 @@ import React from 'react';
 
 import Game from './Game';
 
-
 // styles
 import './sass/App.scss';
 

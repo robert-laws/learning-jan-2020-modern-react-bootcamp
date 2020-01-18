@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 
 const Game = () => {
-  const [score, updateScore] = useState(0);
+  const [score, updateScore] = useState(1);
   const [playerName, updatePlayerName] = useState('');
 
   const handleUpdateScore = event => {
     event.preventDefault();
 
-    let randNum = Math.floor(Math.random() * 10 + 1);
-    console.log(randNum);
-
+    let randNum = Math.floor(Math.random() * 10) + 1;
     updateScore(randNum);
   }
 
@@ -19,9 +17,12 @@ const Game = () => {
 
   return (
     <div className="Game">
-      <h2>Game</h2>
-      <p>Number: {score}</p>
-      <button onClick={handleUpdateScore} style={{ display: `${score === 7 ? 'none' : 'inline-block'}` }}>Add Score by {playerName}</button>
+      <h2>Number is: {score}</h2>
+      {
+        score === 7
+        ? <h2>You Win!</h2>
+        : <button onClick={handleUpdateScore}>Add Score by {playerName}</button>
+      }
       <br />
       <input type="text" name="playerName" value={playerName} onChange={handleUpdatePlayerName} />
       <br />
