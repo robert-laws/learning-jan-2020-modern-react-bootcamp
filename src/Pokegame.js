@@ -1,9 +1,9 @@
 import React from 'react';
 import Pokedex from './Pokedex';
 
-const Pokegame = (props) => {
+const Pokegame = ({ pokemon }) => {
   let hand1 = [];
-  let hand2 = [...props.pokemon]
+  let hand2 = [...pokemon]
 
   while(hand1.length < hand2.length) {
     let randIndex = Math.floor(Math.random() * hand2.length);

@@ -17,17 +17,17 @@ let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
 //   ['Philadelphia, PA', 1526000, 1517000],
 // ]
 
-const Pokecard = (props) => {
-  let imgSrc = `${POKE_API}/${padToThree(props.id)}.png`;
+const Pokecard = ({ id, name, type, exp }) => {
+  let imgSrc = `${POKE_API}/${padToThree(id)}.png`;
 
   return (
     <div className="Pokecard">
-      <h1 className="Pokecard-title">{props.name}</h1>
+      <h1 className="Pokecard-title">{name}</h1>
       <div className="Pokecard-image">
-        <img src={imgSrc} alt={props.name} />
+        <img src={imgSrc} alt={name} />
       </div>
-      <div className="Pokecard-data">Type: {props.type}</div>
-      <div className="Pokecard-data">Experience: {props.exp}</div>
+      <div className="Pokecard-data">Type: {type}</div>
+      <div className="Pokecard-data">Experience: {exp}</div>
 
       {/* <div style={{display: 'flex', maxWidth: 900}}>
         <Chart
