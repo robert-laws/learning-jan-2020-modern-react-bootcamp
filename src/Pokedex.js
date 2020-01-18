@@ -1,17 +1,20 @@
 import React from 'react';
 import Pokecard from './Pokecard';
 
-const Pokedex = props => {
+const Pokedex = ({ pokemon, exp, isWinner }) => {
+  let title = isWinner ? 'Pokedex-winner' : 'Pokedex-loser';
+
   return (
     <div className="Pokedex">
-      <h1>Pokedex</h1>
       <div className="Pokedex-cards">
         {
-          props.pokemon.map(p => (
-            <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
-          ))
-        }
+          pokemon.map(p => (
+            <Pokecard key={p.id} id={p.id} name={p.name} type={p.type} exp={p.base_experience} />
+            ))
+          }
       </div>
+      <h2 className={title}>{isWinner ? 'Winner!' : 'Loser!'}</h2>
+      <p>Total Experience: {exp}</p>
     </div>
   )
 }

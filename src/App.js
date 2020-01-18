@@ -1,5 +1,6 @@
 import React from 'react';
-import Pokedex from './Pokedex';
+// import Pokedex from './Pokedex';
+import Pokegame from './Pokegame';
 
 // styles
 import './sass/App.scss';
@@ -7,7 +8,8 @@ import './sass/App.scss';
 function App() {
   return (
     <div className="App">
-      <Pokedex />
+      {/* <Pokedex /> */}
+      <Pokegame />
     </div>
   );
 }

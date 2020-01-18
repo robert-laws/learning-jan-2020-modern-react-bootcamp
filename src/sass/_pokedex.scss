@@ -1,12 +1,29 @@
 .Pokedex {
+  text-align: center;
+
   h1 {
-    text-align: center;
     padding: 10px;
+  }
+
+  h2 {
+    padding: 10px 10px 5px;
+  }
+
+  p {
+    padding-bottom: 35px;
   }
 
   &-cards {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+  }
+
+  &-winner {
+    color: green;
+  }
+
+  &-loser {
+    color: red;
   }
 }
