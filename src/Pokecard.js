@@ -1,7 +1,12 @@
 import React from 'react';
 // import Chart from 'react-google-charts';
 
-const POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
+// const POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
+
+const POKE_API =  'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/';
+
+let padToThree = (number) => (number <= 999 ? `00${number}`.slice(-3) : number);
+
 // const population_nyc = 10000000;
 // const DATA_SOURCE = [
 //   ['City', '2010 Population', '2000 Population'],
@@ -13,15 +18,15 @@ const POKE_API = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 // ]
 
 const Pokecard = (props) => {
-  let imgSrc = `${POKE_API}/${props.id}.png`;
+  let imgSrc = `${POKE_API}/${padToThree(props.id)}.png`;
 
   return (
     <div className="Pokecard">
-      <h1>{props.name}</h1>
+      <h1 className="Pokecard-title">{props.name}</h1>
       <img src={imgSrc} alt={props.name} />
-      <div>Type: {props.type}</div>
-      <div>Experience: {props.exp}</div>
-      <hr />
+      <div className="Pokecard-data">Type: {props.type}</div>
+      <div className="Pokecard-data">Experience: {props.exp}</div>
+
       {/* <div style={{display: 'flex', maxWidth: 900}}>
         <Chart
           width={800}
