@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Game from './Game';
+import RollDice from './RollDice';
 
 // styles
 import './sass/App.scss';
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>App</h1>
-      <Game />
+      <RollDice />
     </div>
   );
 }
