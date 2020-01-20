@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Die = ({ dieRoll }) => {
+const Die = ({ dieRoll, rolling }) => {
   return (
-    <div className="Die">
+    <div className={`Die ${rolling ? 'wobbling' : ''}`}>
       <i className={`fas fa-dice-${dieRoll}`}></i>
     </div>
   )

@@ -26,6 +26,10 @@
       &:active {
         background-color: indigo;
       }
+
+      &:disabled {
+        background-color: #dddddd;
+      }
     }
   }
 }
