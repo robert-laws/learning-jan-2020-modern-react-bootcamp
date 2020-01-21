@@ -3,19 +3,21 @@ import axios from 'axios';
 
 const StarWarsMovies = () => {
   const [number, updateNumber] = useState(1);
+  const [movie, updateMovie] = useState('')
 
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(`https://swapi.co/api/films/${number}/`);
-      console.log(response.data.title)
+      updateMovie(response.data.title);
     }
     fetchData();
-  })
+  }, [number])
 
   return (
     <div>
       <h1>Pick a Movie</h1>
-      <h4>You Chose: {number}</h4>
+      <h4>You Chose: {movie}</h4>
+      
       <select value={number} onChange={e => updateNumber(e.target.value)}>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -24,7 +26,7 @@ const StarWarsMovies = () => {
         <option value="5">5</option>
         <option value="6">6</option>
         <option value="7">7</option>
-      </select>
+      </select>      
     </div>
   )
 }
