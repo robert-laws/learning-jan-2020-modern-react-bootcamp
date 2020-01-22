@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import useTodos from './hooks/useTodos';
 import TodoList from './TodoList';
@@ -12,7 +12,8 @@ import Grid from '@material-ui/core/Grid';
 
 
 const TodoApp = () => {
-  const initialTodos = JSON.parse(window.localStorage.getItem('todos') || []);
+  const initialTodos = [{ id: 1, task: 'Take a walk outside', completed: false}];
+
   const { todos, addTodo, editTodo, removeTodo, toggleTodo } = useTodos(initialTodos)
 
   // const initialTodos = [
@@ -21,11 +22,7 @@ const TodoApp = () => {
   //   { id: 3, task: 'Empty trash cans in house', completed: false }
   // ];
 
-  useEffect(() => {
-    window.localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
-
-  return (    
+  return (
     <Paper
       style={{
         padding: 0,
